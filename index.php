@@ -55,31 +55,51 @@ function iPadAvailability($campus) {
 
 ?>
 
+<style>
+.lib-table td,
+.lib-table th { width: 32%; }
+/* TABLES STYLES */
+table { border-collapse: collapse;}
+.lib-table table {width:100%;}
+.lib-table table th {text-align: left;background-color: #005088;color: white;font-size:1em;padding:.333em;}
+.lib-table table tr.lib-row-headings th {background-color: #004875;color: #fff;font-size: inherit;font-weight:bold;border-bottom: 1px solid #bbb;}
+.lib-table tr:nth-of-type(odd) td {background: #eee;}
+.lib-table tr td { border-bottom:1px solid #bbb;}
+.lib-table th,
+.lib-table td {padding:.5em;}
+.lib-table tr td span { display: none; }
+@media screen and (min-width:30em) {
+.lib-table tr td span { display: inline; }
+}
+</style>
+
 <h3>Technology Available from University Libraries<h3>
 
-<table>
-	<tr>
-		<th>Library</th>
-		<th>Laptops</th>
-		<th>iPads</th>
-	</tr>
+<div class="lib-table">
+	<table class="lib-table">
+		<tr class="lib-row-headings">
+			<th>Library</th>
+			<th>Laptops</th>
+			<th>iPads</th>
+		</tr>
 	
-	<tr>
-		<td>Zumberge</td>
-		<td><?php availability(b1449654); ?> Available</td>
-		<td><?php iPadAvailability(JHZ); ?> Available</td>
-	</tr>
+		<tr>
+			<td><strong>Zumberge</strong></td>
+			<td><?php availability(b1449654); ?><span> Available</span></td>
+			<td><?php iPadAvailability(JHZ); ?><span> Available</span></td>
+		</tr>
 	
-	<tr>
-		<td>Steelcase</td>
-		<td><?php availability(b1661763); ?> Available</td>
-		<td><?php iPadAvailability(STL); ?> Available</td>
-	</tr>
+		<tr>
+			<td><strong>Steelcase</strong></td>
+			<td><?php availability(b1661763); ?><span> Available</span></td>
+			<td><?php iPadAvailability(STL); ?><span> Available</span></td>
+		</tr>
 	
-	<tr>
-		<td>Frey @ <abbr title="Cook-DeVos Center for Health Sciences">CHS</abbr></td>
-		<td><?php availability(b1782453); ?> Available</td>
-		<td><?php iPadAvailability(CHS); ?> Available</td>
-	</tr>	
-</table>
+		<tr>
+			<td><strong>Frey @ <abbr title="Cook-DeVos Center for Health Sciences">CHS</abbr></strong></td>
+			<td><?php availability(b1782453); ?><span> Available</span></td>
+			<td><?php iPadAvailability(CHS); ?><span> Available</span></td>
+		</tr>	
+	</table>
+</div>
 	
