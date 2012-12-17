@@ -14,7 +14,7 @@ function availability($record) {
 
 	// How many laptops are available?
 	foreach($html->find('table#bib_items tr td[width=24%]') as $element) {
-		if((trim($element) == '<td width="24%" ><!-- field % -->&nbsp; AVAILABLE </td>') || (trim($element) == '<td width="24%" ><!-- field % -->&nbsp;Being Processed - Ask at Service Desk </td>')) {
+		if((trim($element) == '<td width="24%" ><!-- field % -->&nbsp;AVAILABLE </td>') || (trim($element) == '<td width="24%" ><!-- field % -->&nbsp;Being Processed - Ask at Service Desk </td>')) {
 			$no = $no + 1;
 		}
 	}
@@ -48,7 +48,7 @@ function iPadAvailability($campus) {
 		//print_r(trim($location));
 		if(trim($location) == $campus_match) {
 			$ipads = $element->find('td[width=24%]',0)->plaintext;
-			if((trim($ipads) == '&nbsp; AVAILABLE') || (trim($ipads) == '&nbsp;Being Processed - Ask at Service Desk')) {
+			if((trim($ipads) == '&nbsp;AVAILABLE') || (trim($ipads) == '&nbsp;Being Processed - Ask at Service Desk')) {
 				$no = $no + 1;
 			}
 		}
