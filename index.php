@@ -5,13 +5,16 @@ include ('../libs/simple_html_dom.php');
 function availability($record) {
 
 	// Get the OPAC laptop page for this campus
-	$html = file_get_html('http://library.catalog.gvsu.edu/record=' . $record);
+	// Zumberege http://library.catalog.gvsu.edu/search~S17?/.b1449654/.b1449654/1,1,1,B/holdings~1449654&FF=&1,0,
+	// Steelcase http://library.catalog.gvsu.edu/search~S17?/.b1661763/.b1661763/1,1,1,B/holdings~1661763&FF=&1,0,
+	// Frey
+	$html = file_get_html('http://library.catalog.gvsu.edu/search~S17?/.b' . $record . '/.b' . $record . '/1,1,1,B/holdings~' . $record . '&FF=&1,0,');
 
 	$no = 0;
 
 	// How many laptops are available?
 	foreach($html->find('table#bib_items tr td[width=24%]') as $element) {
-		if(trim($element) == '<td width="24%" ><!-- field % -->&nbsp; AVAILABLE </td>') {
+		if((trim($element) == '<td width="24%" ><!-- field % -->&nbsp; AVAILABLE </td>') || (trim($element) == '<td width="24%" ><!-- field % -->&nbsp;Being Processed - Ask at Service Desk </td>')) {
 			$no = $no + 1;
 		}
 	}
@@ -45,7 +48,7 @@ function iPadAvailability($campus) {
 		//print_r(trim($location));
 		if(trim($location) == $campus_match) {
 			$ipads = $element->find('td[width=24%]',0)->plaintext;
-			if(trim($ipads) == '&nbsp; AVAILABLE') {
+			if((trim($ipads) == '&nbsp; AVAILABLE') || (trim($ipads) == '&nbsp;Being Processed - Ask at Service Desk')) {
 				$no = $no + 1;
 			}
 		}
@@ -60,7 +63,7 @@ function iPadAvailability($campus) {
 .lib-table th { width: 32%; }
 /* TABLES STYLES */
 table { border-collapse: collapse;}
-.lib-table table {width:100%;}
+.lib-table table {width:100%; font-family: Arial, Helvetica, sans-serif; }
 .lib-table table th {text-align: left;background-color: #005088;color: white;font-size:1em;padding:.333em;}
 .lib-table table tr.lib-row-headings th {background-color: #004875;color: #fff;font-size: inherit;font-weight:bold;border-bottom: 1px solid #bbb;}
 .lib-table tr:nth-of-type(odd) td {background: #eee;}
@@ -73,8 +76,6 @@ table { border-collapse: collapse;}
 }
 </style>
 
-<h3>Technology Available from University Libraries<h3>
-
 <div class="lib-table">
 	<table class="lib-table">
 		<tr class="lib-row-headings">
@@ -85,20 +86,20 @@ table { border-collapse: collapse;}
 	
 		<tr>
 			<td><strong>Zumberge</strong></td>
-			<td><?php availability(b1449654); ?><span> Available</span></td>
-			<td><?php iPadAvailability(JHZ); ?><span> Available</span></td>
+			<td><?php availability('1449654'); ?><span> Available</span></td>
+			<td><?php iPadAvailability('JHZ'); ?><span> Available</span></td>
 		</tr>
 	
 		<tr>
 			<td><strong>Steelcase</strong></td>
-			<td><?php availability(b1661763); ?><span> Available</span></td>
-			<td><?php iPadAvailability(STL); ?><span> Available</span></td>
+			<td><?php availability('1661763'); ?><span> Available</span></td>
+			<td><?php iPadAvailability('STL'); ?><span> Available</span></td>
 		</tr>
 	
 		<tr>
 			<td><strong>Frey @ <abbr title="Cook-DeVos Center for Health Sciences">CHS</abbr></strong></td>
-			<td><?php availability(b1782453); ?><span> Available</span></td>
-			<td><?php iPadAvailability(CHS); ?><span> Available</span></td>
+			<td><?php availability('1782453'); ?><span> Available</span></td>
+			<td><?php iPadAvailability('CHS'); ?><span> Available</span></td>
 		</tr>	
 	</table>
 </div>
