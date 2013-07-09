@@ -85,9 +85,10 @@ table { border-collapse: collapse;}
 		</tr>
 	
 		<tr>
-			<td><strong>Zumberge</strong></td>
-			<td><?php availability('1449654'); ?><span> Available</span></td>
-			<td><?php iPadAvailability('JHZ'); ?><span> Available</span></td>
+			<!-- Commented out scripts since IT is now doing lending at Mary I, but won't be up and running until Fall -->
+			<td><strong>Mary Idema Pew</strong></td>
+			<td><?php //availability('1449654'); ?>0<span> Available</span></td>
+			<td><?php //iPadAvailability('JHZ'); ?>0<span> Available</span></td>
 		</tr>
 	
 		<tr>
