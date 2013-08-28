@@ -8,7 +8,7 @@ function availability($record) {
 	// Zumberege http://library.catalog.gvsu.edu/search~S17?/.b1449654/.b1449654/1,1,1,B/holdings~1449654&FF=&1,0,
 	// Steelcase http://library.catalog.gvsu.edu/search~S17?/.b1661763/.b1661763/1,1,1,B/holdings~1661763&FF=&1,0,
 	// Frey
-	$html = file_get_html('http://library.catalog.gvsu.edu/search~S17?/.b' . $record . '/.b' . $record . '/1,1,1,B/holdings~' . $record . '&FF=&1,0,');
+	$html = file_get_html('http://library.catalog.gvsu.edu/search~S19?/.b' . $record . '/.b' . $record . '/1,1,1,B/holdings~' . $record . '&FF=&1,0,');
 
 	$no = 0;
 
@@ -24,10 +24,10 @@ function availability($record) {
 function iPadAvailability($campus) {
 
 	// Get the OPAC iPad page
-	$html = file_get_html('http://library.catalog.gvsu.edu/search~S17?/.b3397959/.b3397959/1,1,1,B/holdings~3397959&FF=&1,0,');
+	$html = file_get_html('http://library.catalog.gvsu.edu/search~S19?/.b3397959/.b3397959/1,1,1,B/holdings~3397959&FF=&1,0,');
 
-	if($campus == "JHZ") {
-		$campus_match = '&nbsp;ZUMBERGE Course Reserves';
+	if($campus == "MIIT") {
+		$campus_match = '&nbsp;IT Helpdesk - Mary Idema Pew Library';
 	} else {
 		if($campus == "STL") {
 				$campus_match = '&nbsp;STEELCASE Course Reserves';
@@ -87,7 +87,7 @@ table { border-collapse: collapse;}
 		<tr>
 			<!-- Commented out scripts since IT is now doing lending at Mary I, but won't be up and running until Fall -->
 			<td><strong>Mary Idema Pew</strong></td>
-			<td><?php //availability('1449654'); ?>0<span> Available</span></td>
+			<td><?php availability('35661707'); ?><span> Available</span></td>
 			<td><?php //iPadAvailability('JHZ'); ?>0<span> Available</span></td>
 		</tr>
 	
