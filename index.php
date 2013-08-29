@@ -88,7 +88,7 @@ table { border-collapse: collapse;}
 			<!-- Commented out scripts since IT is now doing lending at Mary I, but won't be up and running until Fall -->
 			<td><strong>Mary Idema Pew</strong></td>
 			<td><?php availability('35661707'); ?><span> Available</span></td>
-			<td><?php //iPadAvailability('JHZ'); ?>0<span> Available</span></td>
+			<td><?php iPadAvailability('MIIT'); ?><span> Available</span></td>
 		</tr>
 	
 		<tr>
