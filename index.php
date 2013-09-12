@@ -88,7 +88,7 @@ i { font-style: normal;}
 		<tr>
 			<!-- Commented out scripts since IT is now doing lending at Mary I, but won't be up and running until Fall -->
 			<td id="maryi-name"><strong>Mary Idema Pew</strong></td>
-			<td id="maryi-laptops"><i><?php availability('35661707'); ?></i><span> Available</span></td>
+			<td id="maryi-laptops"><i><?php availability('3566170'); ?></i><span> Available</span></td>
 			<td id="maryi-ipads"><?php iPadAvailability('MIIT'); ?><span> Available</span></td>
 		</tr>
 	
