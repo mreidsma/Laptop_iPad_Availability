@@ -73,6 +73,7 @@ table { border-collapse: collapse;}
 .lib-table tr td span { display: none; }
 @media screen and (min-width:30em) {
 .lib-table tr td span { display: inline; }
+i { font-style: normal;}
 }
 </style>
 
@@ -87,19 +88,19 @@ table { border-collapse: collapse;}
 		<tr>
 			<!-- Commented out scripts since IT is now doing lending at Mary I, but won't be up and running until Fall -->
 			<td id="maryi-name"><strong>Mary Idema Pew</strong></td>
-			<td id="maryi-laptops"><?php availability('35661707'); ?><span> Available</span></td>
+			<td id="maryi-laptops"><i><?php availability('35661707'); ?></i><span> Available</span></td>
 			<td id="maryi-ipads"><?php iPadAvailability('MIIT'); ?><span> Available</span></td>
 		</tr>
 	
 		<tr>
 			<td id="steel"><strong>Steelcase</strong></td>
-			<td id="steel-laptops"><?php availability('1661763'); ?><span> Available</span></td>
+			<td id="steel-laptops"><i><?php availability('1661763'); ?></i><span> Available</span></td>
 			<td id="steel-ipads"><?php iPadAvailability('STL'); ?><span> Available</span></td>
 		</tr>
 	
 		<tr>
 			<td id="frey"><strong>Frey @ <abbr title="Cook-DeVos Center for Health Sciences">CHS</abbr></strong></td>
-			<td id="frey-laptops"><?php availability('1782453'); ?><span> Available</span></td>
+			<td id="frey-laptops"><i><?php availability('1782453'); ?></i><span> Available</span></td>
 			<td id="frey-ipads"><?php iPadAvailability('CHS'); ?><span> Available</span></td>
 		</tr>	
 	</table>
